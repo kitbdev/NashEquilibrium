@@ -3,12 +3,12 @@
 # 2017-9-26
 
 # computes Nash Equilibrium
-def Nash():
+def Nash(users, reward):
     # sort users by cost
-    users = [] # k
-    num_users = 0 # n
+    #users = [0.5,0.3,0.2,0.6] # k
+    num_users = len(users) # n
     users.sort()
-    reward = 0 # R
+    #reward = 5 # R
 
     # select the users
     selected_users = [0,1] # S
@@ -28,5 +28,6 @@ def Nash():
             tne[i] = ((len(selected_users)-1) * reward / total_selected_cost) * (1 - (len(selected_users)-1) * users[i] / total_selected_cost)
     return tne
 
-t = Nash()
+users = [0.2,0.4,0.1,0.12,0.3,0.15]
+t = Nash(users,5)
 print(t)
